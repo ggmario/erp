@@ -34,7 +34,16 @@ public class ComDefaultVO implements Serializable {
 
 	/** recordCountPerPage */
 	private int recordCountPerPage = 10;
+	
+	/** 등록 일짜*/
+	private String reg_date = "";
+	
+	/** 수정 일짜*/
+	private String upt_date = "";
 
+	/** 사용여부 Y:사용, N 중지*/
+	private String state_yn = "";
+	
 	// LIST 페이징
 	@JsonIgnore
 	private boolean bPaging = true;
@@ -696,7 +705,51 @@ public class ComDefaultVO implements Serializable {
 	public void setSchGbn(String schGbn) {
 		this.schGbn = schGbn;
 	}
+	/**
+	 * 등록일 일자
+	 * @return the reg_date
+	 */
+	public String getReg_date() {
+		return reg_date;
+	}
+	/**
+	 * 등록일 일자
+	 * @param reg_date the reg_date to set
+	 */
+	public void setReg_date(String reg_date) {
+		this.reg_date = reg_date;
+	}
+	/**
+	 * 업데이트 일짜
+	 * @return the upt_date
+	 */
+	public String getUpt_date() {
+		return upt_date;
+	}
+	/**
+	 * 업데이트 일자
+	 * @param upt_date the upt_date to set
+	 */
+	public void setUpt_date(String upt_date) {
+		this.upt_date = upt_date;
+	}
 
+	/**
+	 * 사용여부(삭제,화면 표기 여부 등 사용)
+	 * @return the state_yn
+	 */
+	public String getState_yn() {
+		return state_yn;
+	}
+
+	/**
+	 * 사용여부(삭제,화면 표기 여부 등 사용)
+	 * @param state_yn the state_yn to set
+	 */
+	public void setState_yn(String state_yn) {
+		this.state_yn = state_yn;
+	}
+	
 
 	
 }

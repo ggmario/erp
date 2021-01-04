@@ -6,6 +6,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources-local"/>
         <property name="context-root" value="erp_groufin"/>
-        <property name="java-output-path" value="/erp_groufin/target/classes"/>
+        <property name="java-output-path" value="/erp_groufin/build/classes"/>
     </wb-module>
 </project-modules>

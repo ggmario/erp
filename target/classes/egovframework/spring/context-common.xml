@@ -8,8 +8,8 @@
 <!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" /> -->
 <!--     </context:component-scan> -->
     
-	<context:component-scan base-package="groufin">
-       <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	<context:component-scan base-package="groufin" use-default-filters="false">
+<!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" /> -->
     </context:component-scan>
 
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

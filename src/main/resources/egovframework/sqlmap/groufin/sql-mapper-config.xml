@@ -5,15 +5,10 @@
     <typeAliases>
 		<typeAlias alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
 		
-<!-- 		<typeAlias alias="quickOrderInfoVO" type="groufin.service.model.QuickOrderInfoVO"/> -->
-<!-- 		<typeAlias alias="quickOrderLoginVO" type="groufin.service.model.QuickOrderLoginVO"/> -->
-<!-- 		<typeAlias alias="cafeOrderVO" type="groufin.service.model.CafeOrderVO"/> -->
-<!-- 		<typeAlias alias="cafeOrderItemVO" type="groufin.service.model.CafeOrderItemVO"/> -->
-<!-- 		<typeAlias alias="quickOrderStatisticsVO" type="groufin.service.model.QuickOrderStatisticsVO"/> -->
-<!-- 		<typeAlias alias="cafeProductVO" type="groufin.service.model.CafeProductVO"/> -->
+		<typeAlias alias="comDefaultVO" type="groufin.com.web.model.ComDefaultVO"/>	<!-- 공통 -->
+		<typeAlias alias="commCodeVO" type="groufin.com.web.model.CommCodeVO"/> <!-- 공통 코드 -->
+		<typeAlias alias="employeeVO" type="groufin.employee.service.model.EmployeeVO"/>	<!-- 직원 -->
 		
 		
-<!-- 		<typeAlias alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/> -->
-<!-- 		<typeAlias alias="sampleVO" type="egovframework.example.sample.service.SampleVO"/> -->
     </typeAliases>
 </configuration>

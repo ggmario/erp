@@ -11,8 +11,8 @@
  * 
  * Project	    : taeTime
  * Program    	: ErpGroufin
- * Description	: 그루핀 인트라넷
- * Environment	: java 8, servlet 3.1, Tomcat 8, Mysql
+ * Description	: 그루핀 인트라넷 메인/로그인/로그아웃
+ * Environment	: java 8, servlet 3.1, Tomcat 9, Mysql
  * Notes	    : Developed by groufin.com
  * 
  * @(#) MainController.java
@@ -54,11 +54,56 @@ public class MainController extends SessionController {
 	 */
 	@RequestMapping(value = {"/main.do","/index.do"} )//둘중 하나에 해당 하면 수행 됨
 	public String orderJoin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("searchVO") ComDefaultVO comVo, ModelMap model, HttpSession session) throws Exception {
-//		if(session.getAttribute(sSession) != null){
-//			response.sendRedirect("/orderProgress.do");
+		if(session.getAttribute(sSession) == null){
+			model.addAttribute("strScript",super.getReturnProc("로그인 해주세요", "/login.do"));
 			System.out.println("aaaaaaaa");
 			log.debug("== 메인 호출 ==");
-//		}
+			return super.returnPage;
+		}
+		try {
+			//정상 메인 화면 내용 DB조회 화면에 리턴 내용
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		return"groufin/main/main";
+	}
+	
+	/**
+	 * 로그인 페이지
+	 * @param request
+	 * @param response
+	 * @param comVo
+	 * @param model
+	 * @param session
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/login.do")
+	public String login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("searchVO") ComDefaultVO comVo, ModelMap model, HttpSession session) throws Exception {
+		if(session.getAttribute(sSession) != null){
+			model.addAttribute("strScript",super.getReturnProc("이미 로그인 상태 입니다", "/main.do"));
+//			response.sendRedirect("/orderProgress.do");
+			System.out.println("login Page");
+			log.debug("== 로그인 페이지 입니다.  ==");
+		}
+		return"groufin/login/login";
+	}
+	
+	/**
+	 * 로그 아웃
+	 * @param request
+	 * @param response
+	 * @param comVo
+	 * @param model
+	 * @param session
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/logout.do")
+	public String logout(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("searchVO") ComDefaultVO comVo, ModelMap model, HttpSession session) throws Exception {
+		session.removeAttribute(sSession);
+		log.debug("로그 아웃");
+		model.addAttribute("strScript",super.getReturnPage("로그아웃 되었습니다", "M"));
+		return super.returnPage;
 	}
 }

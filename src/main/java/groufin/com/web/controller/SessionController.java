@@ -16,9 +16,6 @@ public class SessionController {
 	@Value("${SEED.KEY.VAL}") 
 	protected String seedKey;
 	
-	@Value("${Product.Session.Cafe}")
-	protected String sSessionCafe;
-	
 	protected String member_seq = "";
 	protected String member_id = "";
 	protected String member_nm = "";
@@ -26,7 +23,7 @@ public class SessionController {
 	protected String member_code = "";
 	
 	protected String returnValue = "";	
-	protected String returnPage = "com/returnPage";
+//	protected String returnPage = "com/returnPage";
 	
 	protected String  WRONG_APPROACH = "잘못된 접근입니다.";
 	protected String  NO_DATA = "데이터가 존재하지 않습니다.";
@@ -41,6 +38,13 @@ public class SessionController {
 		}
 		return URLEncoder.encode(req.getRequestURI() + q, "UTF-8");
 	}
+	
+	protected String returnPage = "";
+
+	public SessionController() {
+		returnPage = "/error/returnPage";
+	}
+
 
 	
 	//리턴관련
@@ -66,10 +70,14 @@ public class SessionController {
 			strScript += "history.back();\n";	
 		}else if(tp.equals("C")){
 			strScript += "self.close();\n";	
+		}else if (tp.equals("M")) {/** 메인 화면 이동 */
+			strScript += "location.href='/main.do';\n";
 		}else if(tp.equals("CO")){
 			//strScript += "opener.location.reload();\n";
 			strScript += "window.opener.document.location.href = window.opener.document.URL;\n";
 			strScript += "self.close();\n";
+		}else if(tp.equals("L")){
+			strScript += "location.href='/login.do';\n";
 		}else{
 			strScript += "location.href='"+tp+"';\n";
 		}
