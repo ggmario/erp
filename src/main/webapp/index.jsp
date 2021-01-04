@@ -4,7 +4,7 @@
 <head>
 <title>QuickOrder</title> 
 <script type="text/javascript">
-location.replace("/main.do");  
+location.replace("/main.do");    
 </script>
 </head>
 <body>
