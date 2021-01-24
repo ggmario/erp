@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="../common/css/base.css" rel="stylesheet">
+<link rel="stylesheet" href="../common/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="../common/css/common.css" rel="stylesheet">
+<link rel="stylesheet" href="../common/js/jquery.ui/jquery-ui-1.10.3.custom.min.css">
+<script src="../common/js/jquery-1.11.0.min.js"></script>
+<script src="../common/js/common.js"></script>
+<script src="../common/js/jquery-1.8.3.js"></script>
+<script src="../common/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="..//common/js/jquery.ui.datepicker.custom.js"></script>
+</head>
+<body class="bg">	
+	<div class="login">
+		<h1 class="logo"><img src="../images/logo-black.png" alt="그루핀 ERP"></h1>
+		<div class="login_form">
+			<p class="today">Today  2027.01.25</p>
+			<div class="line">
+				<input type="text" placeholder="아이디">
+				<input type="password" placeholder="비밀번호">
+		        <label for="sport1" class="mr_30"><input type="checkbox" name="sport[]" id="sport1" value="아이디 저장" class="chk_btn"/> 아이디 저장</label>
+		        <label for="sport2"><input type="checkbox" name="sport[]" id="sport2" value="아이디/비밀번호 저장"  class="chk_btn"/> 아이디/비밀번호 저장</label>
+			</div>
+		</div>
+		<div class="wrap_btn">
+			<a href="#" class="btn btn_blue full">로그인</a>
+		</div>
+	</div>
+	
+	<div class="footer">
+		<span>담당자</span>  홍길동 (<a href="mailto:kd.hong@eluocnc.com">kd.hong@@kperience.com</a>)
+	</div>
+<script>
+	$(function(){
+		customCheckbox('chk_btn')
+	})
+</script>	
+</body>
+</html>
